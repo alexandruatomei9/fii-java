@@ -40,7 +40,7 @@ public class BrokenGame implements Runnable, IGame {
 	@Override
 	public void run() {
 		for(int i=0;i<100;i++) {
-			SyncedPlayer p = new SyncedPlayer("Player " + i, this);			
+			Player p = new Player("Player " + i, this);
 		}		
 	}
 }
