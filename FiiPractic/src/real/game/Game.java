@@ -1,12 +1,12 @@
 package real.game;
 
-public class BrokenGame implements Runnable, IGame {
-	
+public class Game implements Runnable, IGame {
+
 	private final Thread thread;
 	private final int maxPlayers;
 	private int numPlayers;
 	
-	public BrokenGame(int maxPlayers) {
+	public Game(int maxPlayers) {
 		this.maxPlayers = maxPlayers;
 		this.numPlayers = 0; //default
 		this.thread = new Thread(this);
@@ -30,9 +30,9 @@ public class BrokenGame implements Runnable, IGame {
 	}
 	
 	public static void main(String args[]) throws InterruptedException {
-		BrokenGame game = new BrokenGame(4);
+		Game game = new Game(4);
 		game.getContext().join();
-		
+
 		Thread.sleep(5000);
 		System.out.println("End of the game: Max Players:" + game.getMaxPlayers() + ", actual number of players:" + game.getNumPlayers());
 	}

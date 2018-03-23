@@ -1,15 +1,13 @@
 package real.game;
 
 public class Player implements Runnable {
-	
-	private final Thread t;
 	private final String name;
 	private final IGame game;
 	
 	public Player(String name, IGame game) {
 		this.name = name;
 		this.game = game;
-		this.t = new Thread(this);
+		Thread t = new Thread(this);
 		t.start();
 	}
 	
